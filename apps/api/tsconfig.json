@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "outDir": "dist",
+    "sourceMap": false,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "*": ["node_modules/"],
+    },
+    "resolveJsonModule": true
+  },
+  "ts-node": {
+    "files": true
+  }
+}

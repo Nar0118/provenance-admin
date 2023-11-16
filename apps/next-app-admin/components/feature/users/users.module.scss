@@ -1,0 +1,23 @@
+.crudSection {
+  width: 10%;
+  display: flex;
+  column-gap: 30px;
+
+  button {
+    width: 80px !important;
+  }
+}
+
+.deleteUserSection {
+  display: flex !important;
+  justify-content: center;
+  column-gap: 30px;
+
+  button {
+    width: 200px !important;
+  }
+}
+
+.addUser {
+  width: 150px !important;
+}

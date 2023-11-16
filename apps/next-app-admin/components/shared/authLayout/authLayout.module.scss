@@ -1,0 +1,77 @@
+.background {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  height: calc(100% - 87px);
+
+  .imageContainer {
+    width: 50%;
+    padding-right: 20px;
+
+    div {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .children {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    padding-left: 140px;
+  }
+}
+@media screen and(max-width: 1240px) {
+  .background {
+    height: calc(100% - 87px);
+  }
+
+  .children {
+    padding-left: 50px !important;
+  }
+}
+
+@media screen and(max-width: 1000px) {
+  .imageContainer {
+    background-position: 50% 100%;
+  }
+}
+
+@media screen and(max-width: 700px) {
+  .background {
+    .children {
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .imageContainer {
+    display: none;
+  }
+}
+
+@media screen and(max-width: 576px) {
+  .background {
+    .children {
+      width: 100%;
+      padding-left: 40px !important;
+    }
+  }
+
+  .imageContainer {
+    display: none;
+  }
+}
+
+@media screen and(max-width: 400px) {
+  .background {
+    .children {
+      padding-left: 20px !important;
+    }
+  }
+
+  a .imageContainer {
+    display: none;
+  }
+}

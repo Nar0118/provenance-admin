@@ -1,0 +1,4 @@
+cron:
+    # - description: 'Daily CRON'
+    #   url: /companies
+    #   schedule: every 24 hours

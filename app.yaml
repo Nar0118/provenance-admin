@@ -1,0 +1,39 @@
+
+   
+runtime: nodejs16
+env: standard
+entrypoint: node dist/apps/api/main.js
+# runtime: custom
+# env: flex
+instance_class: F1
+
+default_expiration: '0d 0h'
+
+automatic_scaling:
+    target_cpu_utilization: 0.70
+    min_instances: 1
+    max_instances: 10
+    max_concurrent_requests: 80
+    max_idle_instances: 1
+    min_idle_instances: 1
+    min_pending_latency: 30ms
+    max_pending_latency: automatic
+
+# Force https for all requests - but doesn't seem to work?
+handlers:
+    - url: /.*
+      secure: always
+      redirect_http_response_code: 301
+      script: auto
+
+# # memory_gb: 0.6
+
+env_variables:
+    USE_ENV: prod
+    NODE_ENV: prod
+    GCLOUD_PROJECT_DAO: 'provenance-backend'
+    NX_NODE_ENV: production
+    NX_API_URL: 'https://api.provenance.com/v1/'
+    DATABASE_PROTOCOL : mongodb
+    DATABASE_HOST : 34.75.161.189
+    DATABASE_PORT : 27017

@@ -1,0 +1,82 @@
+.headerContainer {
+  display: flex;
+  background-color: var(--black_300);
+  white-space: nowrap;
+  align-content: center;
+
+  .container {
+    align-items: center;
+
+    .logOut {
+      background-color: var(--white_900);
+      border-radius: 25px;
+      padding: 5px 20px;
+      .logOutItem {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 15px;
+        margin: 0;
+        border-radius: 5px 5px 0 0;
+
+        span {
+          font-weight: 500;
+          font-size: var(--text_sm);
+          color: var(--black_300);
+          margin-top: 2px;
+        }
+
+        &:hover {
+          border-radius: 5px;
+          background-color: var(--gray_100);
+        }
+      }
+    }
+  }
+
+  .linkLogin {
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+  }
+
+  .accountDropdown {
+    background-color: var(--white_900);
+    height: 50%;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .accountButton {
+      margin-left: 15px;
+    }
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px calc(11vw - 20px);
+    max-width: 3000px;
+    margin: 0 auto;
+    transition: 0.5s;
+
+    .linkLogin {
+      a {
+        color: var(--white_900);
+      }
+    }
+
+    .accountButton {
+      color: var(--black_300);
+    }
+  }
+}
+
+@media screen and(max-width: 750px) {
+  .headerNavbar {
+    display: none !important;
+  }
+}

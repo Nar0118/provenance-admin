@@ -1,0 +1,176 @@
+.loginFormContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 550px;
+  min-height: 100%;
+
+  .errorMessage {
+    width: 380px !important;
+    color: var(--red_100);
+  }
+
+  .forgotPassword {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      font-weight: 500;
+      color: var(--black_300);
+      font-size: var(--text_sm);
+    }
+
+    :global(.ant-checkbox-inner::after) {
+      border-color: var(--black_300) !important;
+    }
+
+    :global {
+      .ant-checkbox-inner {
+        border-color: var(--black_300) !important;
+        background-color: var(--white_900) !important;
+      }
+    }
+  }
+
+  .loginButton {
+    background-color: var(--black_300);
+    color: var(--white_900);
+    border: 1px solid var(--white_900);
+    height: 40px !important;
+    width: 100% !important;
+
+    &:disabled {
+      color: var(--white_900) !important;
+      background-color: var(--gray_700) !important;
+    }
+
+    &:hover {
+      background-color: var(--button_hover_dark);
+
+      p {
+        color: var(--white_900);
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .inputsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .formItem {
+      width: 380px;
+      height: 40px;
+      margin-bottom: 40px;
+
+      label {
+        margin-bottom: 6px;
+      }
+    }
+
+    .formInput {
+      border-radius: 5px;
+      height: 40px;
+    }
+
+    .recaptcha {
+      transform: scale(0.71);
+      -webkit-transform: scale(0.71);
+      transform-origin: 0 0;
+      -webkit-transform-origin: 0 0;
+      margin: 15px 80px 0 0;
+    }
+  }
+
+  .loginHeader {
+    color: var(--black_300);
+    display: flex;
+    margin-bottom: 34px;
+    font-size: var(--text_xl);
+    font-weight: 600;
+  }
+
+  a {
+    text-align: center;
+  }
+}
+
+@media screen and(max-width: 1240px) {
+  @media screen and(min-width: 700px) {
+    .loginFormContainer {
+      width: 300px;
+
+      .loginHeader {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        font-size: var(--text_lg);
+      }
+
+      .inputsContainer {
+        .formItem {
+          width: 300px;
+          height: 25px;
+          margin-bottom: 40px;
+        }
+
+        .formEmailInput {
+          height: 30px;
+        }
+
+        .formInput {
+          height: 30px;
+        }
+
+        .recaptcha {
+          transform: scale(0.51);
+          -webkit-transform: scale(0.51);
+          transform-origin: 0 0;
+          -webkit-transform-origin: 0 0;
+          margin: 10px 0 0 0;
+        }
+      }
+
+      .loginButton {
+        height: 30px !important;
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 700px) {
+  .loginFormContainer {
+    margin-top: 150px;
+  }
+}
+
+@media screen and(max-width: 425px) {
+  .loginHeader {
+    margin-bottom: 15px !important;
+  }
+
+  .inputsContainer {
+    max-width: 300px;
+    align-items: flex-start !important;
+
+    .formItem {
+      max-width: 300px;
+    }
+  }
+
+  .forgotPassword {
+    max-width: 300px;
+  }
+
+  .loginButton {
+    max-width: 300px !important;
+  }
+
+  .signUp {
+    max-width: 300px;
+  }
+}

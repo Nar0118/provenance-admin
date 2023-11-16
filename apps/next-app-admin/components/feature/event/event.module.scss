@@ -1,0 +1,204 @@
+.container {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+
+  @media screen and (max-width: 750px) {
+    padding: 10px;
+  }
+}
+
+.textSplit {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: keep-all;
+}
+
+.table {
+  margin-top: 30px;
+
+  :global(.ant-table-cell) {
+    border-bottom: none;
+    background: transparent;
+  }
+}
+
+.title {
+  position: relative;
+  text-align: center;
+  font-weight: 700;
+  font-size: var(--text_xl);
+  color: var(--black_300);
+  margin-bottom: 40px;
+}
+
+.modalButtons {
+  width: 100px !important;
+  height: 30px !important;
+}
+
+.modalButtonsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  column-gap: 10px;
+
+  @media screen and (max-width: 500px) {
+    justify-content: space-between;
+  }
+}
+
+.buttonsContainer {
+  display: flex;
+  align-items: center;
+  column-gap: 25px;
+}
+
+.createNftButton {
+  cursor: pointer !important;
+  margin-top: 10px;
+  width: 200px !important;
+}
+
+.inputsContainer {
+  display: flex;
+  flex-direction: column;
+
+  .logoContainer {
+    position: relative;
+
+    .downloadIcon {
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      z-index: 100;
+      font-size: var(--text_lg);
+    }
+
+    &:hover {
+      .downloadIcon {
+        opacity: 1;
+      }
+
+      .logoImg {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .description {
+    width: 100%;
+    column-gap: 20px;
+
+    :global(.ant-input-suffix) {
+      svg {
+        fill: var(--black_500) !important;
+      }
+    }
+  }
+
+  .formItem {
+    width: 100%;
+
+    label {
+      margin-bottom: 6px;
+    }
+  }
+
+  .datePicker {
+    width: 100%;
+
+    label {
+      display: none;
+    }
+  }
+
+  .formItemDescription {
+    label {
+      margin-bottom: 6px;
+    }
+  }
+
+  .formInput {
+    border-radius: 5px;
+    height: 40px;
+    border: 1px solid var(--gray_900);
+  }
+
+  .details {
+    .detailsInputs {
+      .minusIcon {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .textareaDescription {
+        display: flex;
+        flex-direction: column;
+
+        textarea {
+          border-radius: 2px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.auction {
+  margin-top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .auctionStart {
+    width: max-content;
+    display: flex;
+  }
+
+  .auctionEnd {
+    margin-bottom: 20px;
+  }
+}
+
+.buttonSection {
+  display: flex;
+  justify-content: space-between;
+
+  .signUpButton {
+    width: 200px;
+  }
+
+  .rightButton {
+    width: 200px;
+  }
+
+  @media screen and (max-width: 500px) {
+    .signUpButton {
+      width: 100px;
+    }
+
+    .rightButton {
+      width: 100px;
+    }
+  }
+}
+
+.descriptionTextArea {
+  display: flex !important;
+  flex-direction: column !important;
+
+  label {
+    margin-bottom: 6px;
+    display: flex;
+    align-items: right;
+
+    &:after {
+      content: none;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+html:root {
+  --black_300: #151515;
+  --white_900: #ffffff;
+  --blue_500: #2f80ed;
+  --red_100: #ff0000;
+  --gray_700: #c5c5c5;
+  --button_hover_dark: #393939;
+  --button_hover_blue: #579fff;
+  --button_hover_white: #eeeeee;
+}
+
+html:root {
+  --text_xl: 32px;
+  --text_lg: 24px;
+  --text_base: 20px;
+  --text_xs: 12px;
+  --text_xsm: 10px;
+  --text_min: 8px;
+  --text_xmin: 6px;
+}
+
+html,
+body {
+  .ant-modal-wrap {
+    overflow: hidden;
+  }
+  --primary-font: Roboto;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  user-select: none;
+  box-sizing: border-box;
+  font-family: var(--primary-font);
+  margin: 0;
+  padding: 0;
+}

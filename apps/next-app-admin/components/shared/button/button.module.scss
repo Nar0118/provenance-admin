@@ -1,0 +1,203 @@
+.btn {
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  justify-items: flex-start !important;
+  width: 350px;
+  height: 40px !important;
+  border-radius: 5px !important;
+
+  .img {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  }
+
+  &:hover:enabled {
+    img {
+      filter: var(--image_hover_enabled) !important;
+    }
+  }
+  &:active {
+    transform: scale(0.98);
+    box-shadow: 20px 20px 22px 20px rgba(0, 0, 0, 0.24);
+  }
+}
+
+.black {
+  color: var(--white_900) !important;
+  background-color: var(--black_300) !important;
+
+  span {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    color: var(--white_900) !important;
+    border-color: var(--white_900) !important;
+    background-color: var(--button_hover_dark) !important;
+  }
+
+  &:active {
+    border-color: var(--black-300) !important;
+    background-color: var(--button_hover_dark) !important;
+  }
+
+  &:focus {
+    border-color: var(--black-300) !important;
+  }
+
+  &:disabled {
+    color: var(--white_900) !important;
+    background-color: var(--gray_700) !important;
+
+    &:hover {
+      color: var(--white_900) !important;
+      background-color: var(--gray_700) !important;
+      box-shadow: none !important;
+      cursor: not-allowed !important;
+    }
+
+    &:active {
+      transform: none;
+      background-color: none;
+    }
+  }
+}
+
+.white {
+  color: var(--black_300) !important;
+  background-color: var(--white_900) !important;
+  font-size: var(--text_tiny) !important;
+  font-weight: 500 !important;
+
+  span {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    border-color: var(--white_900) !important;
+    color: var(--black_300) !important;
+    background-color: var(--button_hover_white) !important;
+  }
+
+  &:active {
+    background-color: var(--button_hover_white) !important;
+  }
+
+  &:focus {
+    border-color: var(--button_hover_white) !important;
+    background-color: var(--button_hover_white) !important;
+  }
+
+  &:disabled {
+    color: var(--white_900) !important;
+    background-color: var(--gray_700) !important;
+
+    &:hover {
+      color: var(--white_900) !important;
+      background-color: var(--gray_700) !important;
+      box-shadow: none !important;
+      cursor: not-allowed !important;
+    }
+
+    &:active {
+      transform: none;
+      background-color: none;
+    }
+  }
+}
+
+.whiteBorder {
+  background-color: var(--black-300) !important;
+  color: var(--white_900) !important;
+
+  span {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    border-color: var(--white_900) !important;
+    background-color: var(--button_hover_dark) !important;
+  }
+
+  &:active {
+    border-color: var(--white_900);
+    background-color: var(--button_hover_dark) !important;
+  }
+
+  &:focus {
+    border-color: var(--white_900) !important;
+    background-color: var(--button_hover_dark) !important;
+  }
+}
+
+.blackBorder {
+  color: var(--black-300) !important;
+  border: 2px solid var(--black_300) !important;
+  font-size: var(--text_tiny);
+  font-weight: 700 !important;
+
+  span {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    color: var(--black-300) !important;
+    border-color: var(--black_300) !important;
+    background-color: var(--button_hover_white) !important;
+  }
+
+  &:active {
+    background-color: var(--button_hover_white) !important;
+    color: var(--black-300) !important;
+    border: 2px solid var(--black_300) !important;
+  }
+
+  &:focus {
+    background-color: var(--button_hover_white) !important;
+    color: var(--black-300) !important;
+    border: 2px solid var(--black_300) !important;
+  }
+}
+
+.blue {
+  color: var(--white_900) !important;
+  background-color: var(--blue_500) !important;
+
+  &:hover {
+    background-color: var(--button_hover_blue) !important;
+    color: var(--white_900) !important;
+  }
+}
+
+.editButton {
+  cursor: pointer !important;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.deleteButton {
+  cursor: pointer !important;
+  width: 20px !important;
+  height: 20px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hrefButton {
+  cursor: pointer !important;
+  border-radius: 50% !important;
+  width: 25px !important;
+  height: 25px !important;
+  background-color: var(--black_300) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,63 @@
+steps:
+    - name: node:16
+      entrypoint: npm
+      args: ["run", "create-env"]
+      secretEnv:
+          [
+              "DATABASE_CONNECTION_URL",
+              "TOKEN_KEY",
+              "SECRET_JWT_CODE",
+              "DEFAULT_EMAIL",
+              "DEFAULT_EMAIL_PASSWORD",
+              "PORT",
+              "CLIENT_ID",
+              "DEPLOYED_FE_URL",
+              "BUCKET_NAME"
+          ]
+      env:
+          - "PROJECT_ID=${PROJECT_ID}"
+    - name: 'node:16'
+      id: Install
+      entrypoint: /bin/sh
+      args:
+          - '-c'
+          - |
+              yarn install && \
+              yarn build api
+    - name: 'gcr.io/cloud-builders/gcloud'
+      id: Deploy app
+      args: ['app', 'deploy', 'app.yaml', '--quiet', '--stop-previous-version']
+    - name: 'gcr.io/cloud-builders/gcloud'
+      args: ['app', 'deploy', 'cron.yaml']
+    - name: 'gcr.io/cloud-builders/gcloud'
+      id: Delete Old apps
+      entrypoint: /bin/sh
+      args:
+          - '-c'
+          - |
+              gcloud app versions delete `gcloud app versions list --service default --sort-by '~version' --format 'value(version.id)' | sort -r | tail -n +2 | paste -sd " " -`
+
+availableSecrets:
+    secretManager:
+        - versionName: projects/${PROJECT_ID}/secrets/DATABASE_CONNECTION_URL/versions/latest
+          env: "DATABASE_CONNECTION_URL"
+        - versionName: projects/${PROJECT_ID}/secrets/TOKEN_KEY/versions/latest
+          env: "TOKEN_KEY"
+        - versionName: projects/${PROJECT_ID}/secrets/SECRET_JWT_CODE/versions/latest
+          env: "SECRET_JWT_CODE"
+        - versionName: projects/${PROJECT_ID}/secrets/DEFAULT_EMAIL/versions/latest
+          env: "DEFAULT_EMAIL"
+        - versionName: projects/${PROJECT_ID}/secrets/DEFAULT_EMAIL_PASSWORD/versions/latest
+          env: "DEFAULT_EMAIL_PASSWORD"
+        - versionName: projects/${PROJECT_ID}/secrets/PORT/versions/latest
+          env: "PORT"
+        - versionName: projects/${PROJECT_ID}/secrets/DEPLOYED_FE_URL/versions/latest
+          env: "DEPLOYED_FE_URL"
+        - versionName: projects/${PROJECT_ID}/secrets/CLIENT_ID/versions/latest
+          env: "CLIENT_ID"
+        - versionName: projects/${PROJECT_ID}/secrets/BUCKET_NAME/versions/latest
+          env: "BUCKET_NAME"      
+
+timeout: '1600s'
+options:
+    machineType: 'N1_HIGHCPU_32'
